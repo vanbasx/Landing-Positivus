@@ -105,7 +105,7 @@
 //===================================SERVICES=====================================================================================================================
 
 .services {
-  padding-bottom: 100px;
+  padding-bottom: clamp(3.125rem, 2.038rem + 5.43vw, 6.25rem); //100px 50px
   // .services__container
   &__container {
   }
@@ -149,7 +149,7 @@
     justify-content: space-between;
     gap: 30px;
     width: 100%;
-    background-color: #f3f3f3;
+    background-color: $grayColor;
     max-width: clamp(36.25rem, -2.188rem + 50vw, 37.5rem); //600px 580px
     box-shadow: 0 5px 0 0 #191a23;
     @media (max-width: 1230px) {
@@ -255,3 +255,80 @@
 }
 
 //===================================/SERVICES=====================================================================================================================
+
+//===================================BANNER=====================================================================================================================
+
+.banner {
+  // .banner__container
+  &__container {
+  }
+  &__wrapper {
+    padding: clamp(1.875rem, 1.223rem + 3.26vw, 3.75rem); //60px 30px
+    background-color: $grayColor;
+    border-radius: 45px;
+    display: flex;
+    position: relative;
+  }
+  // .banner__info
+  &__info {
+    @media (max-width: 990px) {
+      margin: 0 auto;
+      text-align: center;
+    }
+    @media (max-width: 420px) {
+      text-align: left;
+    }
+  }
+  // .banner__info-title
+  &__info-title {
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 38px;
+    padding-bottom: 25px;
+  }
+  // .banner__info-subtitle
+  &__info-subtitle {
+    max-width: 500px;
+    padding-bottom: 25px;
+    font-size: clamp(1rem, 0.957rem + 0.22vw, 1.125rem); //18px 16px
+  }
+  // .banner__info-button
+  &__info-button {
+    font-size: 20px;
+    line-height: 140%;
+    color: #fff;
+    background-color: $darkColor;
+    @media (max-width:420px) {
+      width: 100%;
+      padding: 20px 15px !important;
+      span {
+        display: none;
+      }
+    }
+    transition: color .3s ease, background-color .3s ease, border-color .3s ease;
+    @media(hover: hover) {
+      &:hover {
+        background-color: transparent;
+        border-color: $darkColor;
+        color: #000;
+      }
+    }
+  }
+  // .banner__img
+  &__img {
+    position: absolute;
+    right: 135px;
+    top: -20px;
+    max-width: 495px;
+    max-height: 394px;
+    object-fit: cover;
+    @media (max-width: 1090px) {
+      right: 50px;
+    }
+    @media (max-width: 990px) {
+      display: none;
+    }
+  }
+}
+
+//===================================/BANNER=====================================================================================================================
