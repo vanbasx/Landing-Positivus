@@ -1,4 +1,19 @@
 // Заголовки, общие БЄМ блоки и проче...
+.badge {
+  padding: 2px 7px;
+  background-color: $accentColor;
+  color: #000;
+  display: inline-block;
+  font-weight: 500;
+  font-size: 20px;
+  border-radius: 7px;
+}
+
+.subtitle {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+}
 
 //===================================HERO=====================================================================================================================
 
@@ -86,3 +101,131 @@
 }
 
 //===================================/HERO=====================================================================================================================
+
+//===================================SERVICES=====================================================================================================================
+
+.services {
+  padding-bottom: 100px;
+  // .services__container
+  &__container {
+  }
+  // .services__top
+  &__top {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding-bottom: 80px;
+  }
+  // .services__top-title
+  &__top-title {
+    font-weight: 500;
+    font-size: 40px;
+  }
+  // .services__top-subtitle
+  &__top-subtitle {
+    max-width: 580px;
+  }
+  // .services__cards
+  &__cards {
+    display: flex;
+    align-items: stretch;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+  // .services__card
+  &__card {
+    padding: 50px;
+    border: 1px solid #191a23;
+    border-radius: 45px;
+    display: flex;
+    gap: 30px;
+    background-color: #f3f3f3;
+    max-width: 600px;
+    box-shadow: 0 5px 0 0 #191a23;
+  }
+  // .services__card-info
+  &__card-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 90px;
+  }
+  // .services__card-title
+  &__card-title {
+    white-space: wrap;
+    padding: 0 7px;
+    span {
+      font-weight: 500;
+      font-size: 30px;
+    }
+  }
+  // .services__card-button
+  &__card-button {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 140%;
+    position: relative;
+    svg {
+      transition: transform .4s ease;
+    }
+    &::before {
+      position: absolute;
+      content: "";
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 57px;
+      background-color: $darkColor;
+      transition: width .3s ease;
+    }
+      @media (hover :hover) {
+        &:hover {
+          svg {
+          transform: rotate(30deg);
+          }
+          &::before {
+            width: 105px;
+          }
+        }
+      }
+  }
+  // .services__card-img
+  &__card-img {
+    max-width: 210px;
+    object-fit: contain;
+  }
+}
+
+.accent-card {
+  background-color: $accentColor;
+  span {
+    background-color: $darkColor;
+    color: #fff;
+  }
+}
+
+.dark-card {
+  background-color: $darkColor;
+  .services__card-button {
+    color: #fff;
+    &::before {
+      background-color: #fff;
+    }
+  }
+  span {
+    background-color: #fff;
+  }
+  svg {
+    circle {
+      fill: #fff;
+    }
+    path {
+      fill: $darkColor;
+    }
+  }
+}
+
+//===================================/SERVICES=====================================================================================================================
