@@ -113,8 +113,11 @@
   &__top {
     display: flex;
     align-items: center;
-    gap: 40px;
-    padding-bottom: 80px;
+    gap: clamp(1.563rem, 1.236rem + 1.63vw, 2.5rem); //40px 25px
+    padding-bottom: clamp(2.188rem, 1.209rem + 4.89vw, 5rem); //80px 35px
+    @media (max-width: 780px) {
+      flex-direction: column;
+    }
   }
   // .services__top-title
   &__top-title {
@@ -124,6 +127,10 @@
   // .services__top-subtitle
   &__top-subtitle {
     max-width: 580px;
+    font-size: clamp(0.938rem, 0.872rem + 0.33vw, 1.125rem); //18px 15px
+    @media (max-width: 780px) {
+      text-align: center;
+    }
   }
   // .services__cards
   &__cards {
@@ -134,14 +141,20 @@
   }
   // .services__card
   &__card {
-    padding: 50px;
+    position: relative;
+    padding: clamp(2.188rem, 1.861rem + 1.63vw, 3.125rem); //50px 35px
     border: 1px solid #191a23;
     border-radius: 45px;
     display: flex;
+    justify-content: space-between;
     gap: 30px;
+    width: 100%;
     background-color: #f3f3f3;
-    max-width: 600px;
+    max-width: clamp(36.25rem, -2.188rem + 50vw, 37.5rem); //600px 580px
     box-shadow: 0 5px 0 0 #191a23;
+    @media (max-width: 1230px) {
+      max-width: none;
+    }
   }
   // .services__card-info
   &__card-info {
@@ -149,14 +162,17 @@
     flex-direction: column;
     justify-content: space-between;
     gap: 90px;
+    @media (max-width: 560px) {
+      gap: 110px;
+    }
   }
   // .services__card-title
   &__card-title {
-    white-space: wrap;
+    max-width: clamp(13.438rem, 13.003rem + 2.17vw, 14.688rem);
     padding: 0 7px;
     span {
       font-weight: 500;
-      font-size: 30px;
+      font-size: clamp(1.5rem, 1.37rem + 0.65vw, 1.875rem); //30px 24px
     }
   }
   // .services__card-button
@@ -181,21 +197,31 @@
       background-color: $darkColor;
       transition: width .3s ease;
     }
-      @media (hover :hover) {
-        &:hover {
-          svg {
-          transform: rotate(30deg);
-          }
-          &::before {
-            width: 105px;
-          }
+    @media (hover :hover) {
+      &:hover {
+        svg {
+        transform: rotate(30deg);
+        }
+        &::before {
+          width: 105px;
         }
       }
+    }
+    @media (max-width: 560px) {
+      font-size: 0;
+    }
   }
   // .services__card-img
   &__card-img {
     max-width: 210px;
     object-fit: contain;
+    @media (max-width: 560px) {
+     position: absolute;
+     bottom: 35px;
+     right: 35px; 
+     max-height: 130px;
+     max-width: 150px;
+    }
   }
 }
 
