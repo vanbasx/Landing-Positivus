@@ -336,7 +336,7 @@
 //===================================CASE=====================================================================================================================
 
 .case {
-  padding-top: 150px;
+  padding-top: clamp(3.75rem, 1.793rem + 9.78vw, 9.375rem); //150px 60px
   // .case__container
   &__container {
     z-index: 1 !important;
@@ -367,7 +367,7 @@
   // .case__slider
   &__slider {
     background-color: $darkColor;
-    padding: 30px 10px;
+    padding: 70px 60px;
     border-radius: 45px;
     @media (max-width: 1170px) {
       background-color: transparent;
@@ -379,13 +379,46 @@
 
   // .case__wrapper
   &__wrapper {
+    display: flex !important;
+    gap: 128px;
+    position: relative;
+    &::before {
+      position: absolute;
+      content: "";
+      height: 100%;
+      width: 1px;
+      background-color: #fff;
+      right: clamp(20.625rem, -21.803rem + 57.97vw, 23.125rem); //370px 330px
+    }
+    &::after {
+      position: absolute;
+      content: "";
+      height: 100%;
+      width: 1px;
+      background-color: #fff;
+      left: clamp(19.688rem, -6.83rem + 36.23vw, 21.25rem); //340px 317px
+    }
+    @media (max-width: 1170px) {
+      display: block;
+      gap: 0;
+      &::before {
+        height: 0;
+        width: 0;
+      }
+      &::after {
+        height: 0;
+        width: 0;
+      }
+    }
   }
 
   // .case__slide
   &__slide {
     background-color: $darkColor;
-    padding: 40px 50px;
     border-radius: 45px;
+    @media (max-width: 1170px) {
+      padding: 40px;
+    }
   }
   // .case__slide-text
   &__slide-text {

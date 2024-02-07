@@ -81,7 +81,7 @@ function initSliders() {
 			// Брейкпоинты
 			breakpoints: {
 				320: {
-					slidesPerView: 1.1,
+					slidesPerView: 1.15,
 					spaceBetween: 20,
 					
 				},
@@ -96,7 +96,7 @@ function initSliders() {
 					
 				},
 				1171: {
-					slidesPerView: 3,
+					slidesPerView: 4,
 					spaceBetween: 0,
 				},
 			},
