@@ -236,20 +236,25 @@ export function spollers() {
 		function setSpollerAction(e) {
 			const el = e.target;
 			if (el.closest('[data-spoller]')) {
-				const spollerTitle = el.closest('[data-spoller]');
-				const spollersBlock = spollerTitle.closest('[data-spollers]');
-				const oneSpoller = spollersBlock.hasAttribute('data-one-spoller');
-				const spollerSpeed = spollersBlock.dataset.spollersSpeed ? parseInt(spollersBlock.dataset.spollersSpeed) : 500;
-				if (!spollersBlock.querySelectorAll('._slide').length) {
-					if (oneSpoller && !spollerTitle.classList.contains('_spoller-active')) {
-						hideSpollersBody(spollersBlock);
-					}
-					spollerTitle.classList.toggle('_spoller-active');
-					_slideToggle(spollerTitle.nextElementSibling, spollerSpeed);
-				}
-				e.preventDefault();
+				 const spollerTitle = el.closest('[data-spoller]');
+				 const spollersBlock = spollerTitle.closest('[data-spollers]');
+				 const oneSpoller = spollersBlock.hasAttribute('data-one-spoller');
+				 const spollerSpeed = spollersBlock.dataset.spollersSpeed ? parseInt(spollersBlock.dataset.spollersSpeed) : 500;
+				 if (!spollersBlock.querySelectorAll('._slide').length) {
+					  if (oneSpoller && !spollerTitle.classList.contains('_spoller-active')) {
+							hideSpollersBody(spollersBlock);
+					  }
+					  spollerTitle.classList.toggle('_spoller-active');
+	  
+					  // Получаем родительский элемент spollerTitle и добавляем/удаляем класс
+					  const spollerParent = spollerTitle.parentElement;
+					  spollerParent.classList.toggle('_spoller-active', spollerTitle.classList.contains('_spoller-active'));
+	  
+					  _slideToggle(spollerTitle.nextElementSibling, spollerSpeed);
+				 }
+				 e.preventDefault();
 			}
-		}
+	  	}
 		function hideSpollersBody(spollersBlock) {
 			const spollerActiveTitle = spollersBlock.querySelector('[data-spoller]._spoller-active');
 			const spollerSpeed = spollersBlock.dataset.spollersSpeed ? parseInt(spollersBlock.dataset.spollersSpeed) : 500;

@@ -10,7 +10,7 @@
 import Swiper from 'swiper';
 import { Navigation } from 'swiper/modules';
 /*
-Основниые модули слайдера:
+Основные модули слайдера:
 Navigation, Pagination, Autoplay, 
 EffectFade, Lazy, Manipulation
 Подробнее смотри https://swiperjs.com/
@@ -30,7 +30,7 @@ function initSliders() {
 	// Проверяем, есть ли слайдер на стронице
 	if (document.querySelector('.case__slider')) { // Указываем скласс нужного слайдера
 		// Создаем слайдер
-		new Swiper('.case__slider', { // Указываем скласс нужного слайдера
+		new Swiper('.case__slider', { // Указываем giкласс нужного слайдера
 			// Подключаем модули слайдера
 			// для конкретного случая
 			modules: [Navigation],
