@@ -248,7 +248,7 @@ export function spollers() {
 	  
 					  // Получаем родительский элемент spollerTitle и добавляем/удаляем класс
 					  const spollerParent = spollerTitle.parentElement;
-					  spollerParent.classList.toggle('_spoller-active', spollerTitle.classList.contains('_spoller-active'));
+					  spollerParent.classList.toggle('_spoller-active-item', spollerTitle.classList.contains('_spoller-active'));
 	  
 					  _slideToggle(spollerTitle.nextElementSibling, spollerSpeed);
 				 }
