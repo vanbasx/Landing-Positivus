@@ -476,8 +476,8 @@
 //===================================WORKING=====================================================================================================================
 
 .working {
-  padding-top: 140px;
-  padding-bottom: 140px;
+  padding-top: clamp(3.438rem, 1.59rem + 9.24vw, 8.75rem); //140px 55px
+  padding-bottom: clamp(3.438rem, 1.59rem + 9.24vw, 8.75rem); //140px 55px
 
   // .working__container
 
@@ -490,7 +490,13 @@
     display: flex;
     align-items: center;
     gap: 40px;
-    padding-bottom: 80px;
+    padding-bottom: clamp(1.563rem, 0.367rem + 5.98vw, 5rem); //80px 25px
+
+    @media (max-width: 920px) {
+      flex-direction: column;
+      text-align: center;
+      gap: 0;
+    }
   }
 
   // .working__top-title
@@ -505,6 +511,9 @@
   &__top-subtitle {
     max-width: 580px;
     font-size: clamp(0.938rem, 0.872rem + 0.33vw, 1.125rem);
+    @media (max-width: 920px) {
+      padding-top: 30px;
+    }
   }
 
   // .working__spollers
@@ -520,8 +529,8 @@
     border-radius: 45px;
     background-color: $grayColor;
 
-    padding: 40px 60px;
-    margin-bottom: 30px;
+    padding: clamp(1.875rem, 1.658rem + 1.09vw, 2.5rem) clamp(0.938rem, -0.041rem + 4.89vw, 3.75rem); //40px 60px 25px 15px
+    margin-bottom: clamp(1.25rem, 1.033rem + 1.09vw, 1.875rem); //30px 20px
 
     transition: background-color .5s ease;
   }
@@ -535,6 +544,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    gap: 20px;
   }
 
   // .working__spoller-info
@@ -544,14 +555,14 @@
     align-items: center;
     gap: 25px;
     span {
-      font-size: 60px;
+      font-size: clamp(1.75rem, 1.054rem + 3.48vw, 3.75rem); //60px 28px
       font-weight: 500;
-      line-height: 77px;
+      line-height: 100%;
     }
     p {
-      font-size: 30px;
+      font-size: clamp(1.125rem, 0.864rem + 1.3vw, 1.875rem); //30px 18px
       font-weight: 500;
-      line-height: 38px;
+      line-height: clamp(1.438rem, 1.111rem + 1.63vw, 2.375rem); //38px 23px
     }
   }
 
@@ -563,12 +574,16 @@
     border: 1px solid #000;
     border-radius: 50%;
 
+    display: flex;
+    flex-shrink: 0;
+
     background-color: $grayColor;
     position: relative;
     &::before {
       background-color: #000;
 
       position: absolute;
+      display: flex;
       content: "";
       height: 5px;
       width: 19px;
@@ -591,6 +606,22 @@
 
       transition: transform .4s ease;
     }
+    @media (max-width: 460px) {
+      width: 30px;
+      height: 30px;
+      &::before {
+        width: 12px;
+        height: 3px;
+        bottom: 13px;
+        left: 8.3px;
+      }
+      &::after {
+        width: 12px;
+        height: 3px;
+        bottom: 13px;
+        left: 8.3px;
+      }
+    }
   }
 
   // .working__spoller-body
@@ -598,7 +629,7 @@
   &__spoller-body {
     padding-top: 60px;
 
-    font-size: 18px;
+    font-size: clamp(0.875rem, 0.788rem + 0.43vw, 1.125rem); //18px 14px
     font-weight: 400;
     line-height: 23px;
 
