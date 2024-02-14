@@ -657,3 +657,127 @@
     }
   }
 }
+
+//===================================/WORKING=====================================================================================================================
+
+//===================================TEAM=====================================================================================================================
+
+.team {
+
+  // .team__container
+
+  &__container {
+  }
+
+  // .team__top
+
+  &__top {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding-bottom: 85px;
+  }
+
+  // .team__top-title
+
+  &__top-title {
+    font-weight: 500;
+    font-size: 40px;
+  }
+
+  // .team__top-subtitle
+
+  &__top-subtitle {
+    max-width: 470px;
+    font-size: clamp(0.938rem, 0.872rem + 0.33vw, 1.125rem);
+    @media (max-width: 920px) {
+      padding-top: 30px;
+    }
+  }
+
+  
+  // .team__cards
+
+  &__cards {
+    display: flex;
+    align-items: stretch;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    gap: 40px;
+  }
+
+  // .team__card
+
+  &__card {
+    border: 1px solid rgb(25, 26, 35);
+    border-radius: 45px;
+    box-shadow: 0px 5px 0px 0px rgb(25, 26, 35);
+
+    padding: 40px 35px;
+    max-width: 385px;
+  }
+
+  // .team__card-top
+
+  &__card-top {
+    display: flex;
+    align-items: end;
+    position: relative;
+
+    gap: 20px;
+    padding-bottom: 55px;
+    &::before {
+      content: "";
+      position: absolute;
+
+      bottom: 28px;
+      left: 0;
+      height: 1px;
+      width: 100%;
+
+      background-color: #000;
+    }
+  }
+
+  // .team__card-img
+
+  &__card-img {
+  }
+
+  // .team__card-info
+
+  &__card-info {
+    strong {
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 26px;
+      letter-spacing: 0%;
+    }
+    p {
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 23px;
+      letter-spacing: 0%;
+    }
+  }
+
+  // .team__card-link
+
+  &__card-link {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  // .team__card-bottom
+
+  &__card-bottom {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 23px;
+    letter-spacing: 0%;
+  }
+}
+
+//===================================/TEAM=====================================================================================================================
