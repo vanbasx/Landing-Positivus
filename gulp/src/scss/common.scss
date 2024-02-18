@@ -492,7 +492,7 @@
     gap: 40px;
     padding-bottom: clamp(1.563rem, 0.367rem + 5.98vw, 5rem); //80px 25px
 
-    @media (max-width: 920px) {
+    @media (max-width: 940px) {
       flex-direction: column;
       text-align: center;
       gap: 0;
@@ -511,7 +511,7 @@
   &__top-subtitle {
     max-width: 580px;
     font-size: clamp(0.938rem, 0.872rem + 0.33vw, 1.125rem);
-    @media (max-width: 920px) {
+    @media (max-width: 940px) {
       padding-top: 30px;
     }
   }
@@ -533,6 +533,9 @@
     margin-bottom: clamp(1.25rem, 1.033rem + 1.09vw, 1.875rem); //30px 20px
 
     transition: background-color .5s ease;
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 
 
@@ -675,7 +678,12 @@
     display: flex;
     align-items: center;
     gap: 40px;
-    padding-bottom: 85px;
+    padding-bottom: clamp(2.188rem, 1.101rem + 5.43vw, 5.313rem); //85px 35px
+    @media (max-width: 680px) {
+      flex-direction: column;
+      gap: 25px;
+      text-align: center;
+    }
   }
 
   // .team__top-title
@@ -690,9 +698,6 @@
   &__top-subtitle {
     max-width: 470px;
     font-size: clamp(0.938rem, 0.872rem + 0.33vw, 1.125rem);
-    @media (max-width: 920px) {
-      padding-top: 30px;
-    }
   }
 
   
@@ -705,6 +710,9 @@
     justify-content: center;
 
     gap: 40px;
+    @media (max-width: 1265px) {
+      gap: 30px;
+    }
   }
 
   // .team__card
@@ -716,6 +724,13 @@
 
     padding: 40px 35px;
     max-width: 385px;
+    @media (max-width: 1265px) {
+      max-width: none;
+      width: 48%;
+    }
+    @media (max-width: 865px) {
+      width: 100%;
+    }
   }
 
   // .team__card-top
@@ -738,6 +753,10 @@
 
       background-color: #000;
     }
+    img {
+      width: clamp(5rem, 4.457rem + 2.72vw, 6.563rem); //105px 80px
+      object-fit: cover;
+    }
   }
 
   // .team__card-img
@@ -752,13 +771,11 @@
       font-size: 20px;
       font-weight: 500;
       line-height: 26px;
-      letter-spacing: 0%;
     }
     p {
       font-size: 18px;
       font-weight: 400;
       line-height: 23px;
-      letter-spacing: 0%;
     }
   }
 
@@ -768,6 +785,9 @@
     position: absolute;
     top: 0;
     right: 0;
+    @media (max-width: 387px) {
+      display: none;
+    }
   }
 
   // .team__card-bottom
@@ -776,7 +796,6 @@
     font-size: 18px;
     font-weight: 400;
     line-height: 23px;
-    letter-spacing: 0%;
   }
 }
 
