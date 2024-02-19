@@ -106,6 +106,86 @@ function initSliders() {
 			}
 		});
 	}
+
+
+	if (document.querySelector('.testimonials__swiper')) { // Указываем скласс нужного слайдера
+		// Создаем слайдер
+		new Swiper('.testimonials__swiper', { // Указываем giкласс нужного слайдера
+			// Подключаем модули слайдера
+			// для конкретного случая
+			modules: [Navigation],
+			observer: true,
+			observeParents: true,
+			slidesPerView: 1,
+			spaceBetween: 0,
+			// autoHeight: true,
+			speed: 1200,
+
+			//touchRatio: 0,
+			//simulateTouch: false,
+			loop: true,
+			//preloadImages: false,
+			//lazy: true,
+
+			/*
+			// Эффекты
+			effect: 'fade',
+			autoplay: {
+				delay: 3000,
+				disableOnInteraction: false,
+			},
+			*/
+
+			// Пагинация
+			/*
+			pagination: {
+				el: '.swiper-pagination',
+				clickable: true,
+			},
+			*/
+
+			// Скроллбар
+			/*
+			scrollbar: {
+				el: '.swiper-scrollbar',
+				draggable: true,
+			},
+			*/
+
+			// Кнопки "влево/вправо"
+			navigation: {
+				prevEl: '.swiper-button-prev',
+				nextEl: '.swiper-button-next',
+			},
+
+			// Брейкпоинты
+			breakpoints: {
+				320: {
+					slidesPerView: 1.15,
+					spaceBetween: 20,
+					
+				},
+				768: {
+					slidesPerView: 2,
+					spaceBetween: 20,
+					
+				},
+				992: {
+					slidesPerView: 2,
+					spaceBetween: 20,
+					
+				},
+				1171: {
+					slidesPerView: 2,
+					spaceBetween: 30,
+				},
+			},
+			// События
+			on: {
+
+			}
+		});
+	}
 }
 // Скролл на базе слайдера (по классу swiper_scroll для оболочки слайдера)
 function initSlidersScroll() {
