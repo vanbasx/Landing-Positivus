@@ -8,7 +8,7 @@
 // При необходимости подключаем дополнительные модули слайдера, указывая их в {} через запятую
 // Пример: { Navigation, Autoplay }
 import Swiper from 'swiper';
-import { Navigation } from 'swiper/modules';
+import { Navigation, Pagination } from 'swiper/modules';
 /*
 Основные модули слайдера:
 Navigation, Pagination, Autoplay, 
@@ -113,13 +113,15 @@ function initSliders() {
 		new Swiper('.testimonials__swiper', { // Указываем giкласс нужного слайдера
 			// Подключаем модули слайдера
 			// для конкретного случая
-			modules: [Navigation],
+			modules: [Navigation, Pagination],
 			observer: true,
 			observeParents: true,
 			slidesPerView: 1,
 			spaceBetween: 0,
 			// autoHeight: true,
 			speed: 1200,
+			centeredSlides: true,
+			pagination: true,
 
 			//touchRatio: 0,
 			//simulateTouch: false,
@@ -137,12 +139,10 @@ function initSliders() {
 			*/
 
 			// Пагинация
-			/*
 			pagination: {
 				el: '.swiper-pagination',
 				clickable: true,
 			},
-			*/
 
 			// Скроллбар
 			/*
@@ -161,23 +161,23 @@ function initSliders() {
 			// Брейкпоинты
 			breakpoints: {
 				320: {
-					slidesPerView: 1.15,
-					spaceBetween: 20,
-					
+					slidesPerView: 1,
+					spaceBetween: 40,
+
 				},
 				768: {
 					slidesPerView: 2,
-					spaceBetween: 20,
+					spaceBetween: 40,
 					
 				},
 				992: {
 					slidesPerView: 2,
-					spaceBetween: 20,
+					spaceBetween: 50,
 					
 				},
 				1171: {
 					slidesPerView: 2,
-					spaceBetween: 30,
+					spaceBetween: 50,
 				},
 			},
 			// События
